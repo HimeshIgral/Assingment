@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Name: Himesh" << endl;
+    cout << "Age: 19" << endl;
+    cout << "Hobby: Playing guitar" << endl;
+    return 0;
+}
