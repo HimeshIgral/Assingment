@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+class Box {
+private:
+    int length;
+
+public:
+    void setLength(int l) {
+        length = l;
+    }
+
+    void showLength() {
+        cout << "Length: " << length << endl;
+    }
+};
+
+int main() {
+    Box b;
+    b.setLength(10);
+    b.showLength();
+    return 0;
+}
