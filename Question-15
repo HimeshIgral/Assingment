@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person {
+protected:
+    string name;
+    int age;
+public:
+    Person(string n, int a) : name(n), age(a) {}
+};
+
+class Student : public Person {
+    int rollNumber;
+public:
+    Student(string n, int a, int r) : Person(n, a), rollNumber(r) {}
+    void displayDetails() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+        cout << "Roll Number: " << rollNumber << endl;
+    }
+};
+
+class Vehicle {
+protected:
+    int speed;
+public:
+    Vehicle(int s) : speed(s) {}
+};
+
+class Car : public Vehicle {
+public:
+    Car(int s) : Vehicle(s) {}
+    void displaySpeed() {
+        cout << "Car Speed: " << speed << " km/h" << endl;
+    }
+};
+
+class Bike : public Vehicle {
+public:
+    Bike(int s) : Vehicle(s) {}
+    void displaySpeed() {
+        cout << "Bike Speed: " << speed << " km/h" << endl;
+    }
+};
+
+int main() {
+    Student s("Rahul", 20, 101);
+    s.displayDetails();
+
+    Car c(180);
+    c.displaySpeed();
+
+    Bike b(120);
+    b.displaySpeed();
+
+    return 0;
+}
