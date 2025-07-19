@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Book {
+    string title;
+    string author;
+    float price;
+};
+
+class Rectangle {
+    float length;
+    float breadth;
+public:
+    Rectangle(float l, float b) {
+        length = l;
+        breadth = b;
+    }
+    float area() {
+        return length * breadth;
+    }
+};
+
+int main() {
+    Book b;
+    cout << "Enter book title: ";
+    getline(cin, b.title);
+    cout << "Enter book author: ";
+    getline(cin, b.author);
+    cout << "Enter book price: ";
+    cin >> b.price;
+
+    cout << "\nBook Details:" << endl;
+    cout << "Title: " << b.title << endl;
+    cout << "Author: " << b.author << endl;
+    cout << "Price: " << b.price << endl;
+
+    Rectangle r(5.0, 3.0);
+    cout << "\nRectangle Area: " << r.area() << endl;
+
+    return 0;
+}
