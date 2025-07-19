@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+class Account {
+public:
+    virtual void displayBalance() {
+        cout << "Account balance display" << endl;
+    }
+};
+
+class SavingAccount : public Account {
+public:
+    void displayBalance() override {
+        cout << "Saving Account Balance: 5000" << endl;
+    }
+};
+
+class CurrentAccount : public Account {
+public:
+    void displayBalance() override {
+        cout << "Current Account Balance: 10000" << endl;
+    }
+};
+
+class Animal {
+public:
+    virtual void speak() {
+        cout << "Animal speaks" << endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void speak() override {
+        cout << "Cat meows" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void speak() override {
+        cout << "Dog barks" << endl;
+    }
+};
+
+int main() {
+    Account* acc1 = new SavingAccount();
+    Account* acc2 = new CurrentAccount();
+
+    acc1->displayBalance();
+    acc2->displayBalance();
+
+    Animal* a1 = new Cat();
+    Animal* a2 = new Dog();
+
+    a1->speak();
+    a2->speak();
+
+    delete acc1;
+    delete acc2;
+    delete a1;
+    delete a2;
+
+    return 0;
+}
