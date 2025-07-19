@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+class Counter {
+    static int count;
+public:
+    Counter() {
+        count++;
+    }
+    static void showCount() {
+        cout << "Total objects created: " << count << endl;
+    }
+};
+
+int Counter::count = 0;
+
+class MyArray {
+    int arr[5];
+public:
+    void setValue(int index, int val) {
+        if (index >= 0 && index < 5) {
+            arr[index] = val;
+        }
+    }
+    int getValue(int index) {
+        if (index >= 0 && index < 5) {
+            return arr[index];
+        }
+        return -1;
+    }
+};
+
+int main() {
+    Counter::showCount();
+
+    Counter c1, c2, c3;
+
+    Counter::showCount();
+
+    MyArray a;
+    a.setValue(0, 10);
+    a.setValue(1, 20);
+    cout << "Value at index 0: " << a.getValue(0) << endl;
+    cout << "Value at index 1: " << a.getValue(1) << endl;
+
+    return 0;
+}
