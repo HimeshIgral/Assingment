@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+    string brand;
+    string model;
+    int year;
+public:
+    Car(string b, string m, int y) {
+        brand = b;
+        model = m;
+        year = y;
+    }
+    void display() {
+        cout << "Brand: " << brand << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+};
+
+class Timer {
+public:
+    Timer() {
+        cout << "Timer started" << endl;
+    }
+    ~Timer() {
+        cout << "Timer stopped" << endl;
+    }
+};
+
+int main() {
+    {
+        Timer t;
+        Car c("Toyota", "Camry", 2020);
+        c.display();
+    }
+
+    return 0;
+}
