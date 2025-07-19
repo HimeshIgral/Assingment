@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class Point {
+    int x, y;
+public:
+    Point(int a, int b) : x(a), y(b) {}
+    void display() const {
+        cout << "X: " << x << ", Y: " << y << endl;
+    }
+};
+
+class A;
+class B;
+
+class A {
+    int valueA;
+public:
+    A(int v) : valueA(v) {}
+    friend void sumAB(const A&, const B&);
+};
+
+class B {
+    int valueB;
+public:
+    B(int v) : valueB(v) {}
+    friend void sumAB(const A&, const B&);
+};
+
+void sumAB(const A& a, const B& b) {
+    cout << "Sum: " << (a.valueA + b.valueB) << endl;
+}
+
+int main() {
+    const Point p(3, 4);
+    p.display();
+
+    A a(10);
+    B b(20);
+    sumAB(a, b);
+
+    return 0;
+}
