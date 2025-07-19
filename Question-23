@@ -1,0 +1,71 @@
+#ifndef PERSON_H
+#define PERSON_H
+
+#include <string>
+using namespace std;
+
+class Person {
+private:
+    string name;
+    int age;
+public:
+    Person(string n, int a);
+    void display();
+};
+
+#endif
+
+#include "Person.h"
+#include <iostream>
+using namespace std;
+
+Person::Person(string n, int a) {
+    name = n;
+    age = a;
+}
+
+void Person::display() {
+    cout << "Name: " << name << endl;
+    cout << "Age: " << age << endl;
+}
+
+#include "Person.h"
+
+int main() {
+    Person p("Alice", 25);
+    p.display();
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int rollNumber;
+    float marks;
+public:
+    void setRollNumber(int r) {
+        rollNumber = r;
+    }
+    void setMarks(float m) {
+        marks = m;
+    }
+    int getRollNumber() {
+        return rollNumber;
+    }
+    float getMarks() {
+        return marks;
+    }
+};
+
+int main() {
+    Student s;
+    s.setRollNumber(101);
+    s.setMarks(88.5);
+
+    cout << "Roll Number: " << s.getRollNumber() << endl;
+    cout << "Marks: " << s.getMarks() << endl;
+
+    return 0;
+}
