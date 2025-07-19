@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+public:
+    void showPublic() {
+        cout << "Public method of Employee" << endl;
+    }
+protected:
+    void showProtected() {
+        cout << "Protected method of Employee" << endl;
+    }
+private:
+    void showPrivate() {
+        cout << "Private method of Employee" << endl;
+    }
+};
+
+class Manager : public Employee {
+public:
+    void access() {
+        showPublic();
+        showProtected();
+    }
+};
+
+class Intern : private Employee {
+public:
+    void access() {
+        showPublic();
+        showProtected();
+    }
+};
+
+class TemporaryEmployee : protected Employee {
+public:
+    void access() {
+        showPublic();
+        showProtected();
+    }
+};
+
+int main() {
+    Manager m;
+    m.showPublic();
+    m.access();
+
+    Intern i;
+    i.access();
+
+    TemporaryEmployee t;
+    t.access();
+
+    return 0;
+}
