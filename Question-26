@@ -1,0 +1,82 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Account {
+    double balance;
+public:
+    Account& setBalance(double b) {
+        balance = b;
+        return *this;
+    }
+    void display() {
+        cout << "Balance: " << balance << endl;
+    }
+};
+
+class Movie {
+    string title;
+    float rating;
+public:
+    void setDetails(string t, float r) {
+        title = t;
+        rating = r;
+    }
+    void display() {
+        cout << "Title: " << title << endl;
+        cout << "Rating: " << rating << endl;
+    }
+};
+
+int main() {
+    Account acc;
+    acc.setBalance(1500.75).display();
+
+    Movie* m = new Movie;
+    m->setDetails("Inception", 8.8);
+    m->display();
+    delete m;
+
+    return 0;
+}
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Account {
+    double balance;
+public:
+    Account& setBalance(double b) {
+        balance = b;
+        return *this;
+    }
+    void display() {
+        cout << "Balance: " << balance << endl;
+    }
+};
+
+class Movie {
+    string title;
+    float rating;
+public:
+    void setDetails(string t, float r) {
+        title = t;
+        rating = r;
+    }
+    void display() {
+        cout << "Title: " << title << endl;
+        cout << "Rating: " << rating << endl;
+    }
+};
+
+int main() {
+    Account acc;
+    acc.setBalance(1500.75).display();
+
+    Movie* m = new Movie;
+    m->setDetails("Inception", 8.8);
+    m->display();
+    delete m;
+
+    return 0;
+}
